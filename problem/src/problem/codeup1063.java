@@ -9,9 +9,11 @@ public class codeup1063 {
 Scanner s = new Scanner(System.in);
 int a = s.nextInt();
 int b = s.nextInt();
+int c = s.nextInt();
 
-int result = (a>b)? a : b; 
-System.out.println(result);
+int result1 = a>b ? a:b;
+int result2 = result1>c ? result1:c;
+System.out.println(result2);
 	}
 
 }
