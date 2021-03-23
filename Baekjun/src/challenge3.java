@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class challenge3 {
 
 	public static void main(String[] args) {
+//		백준 구명보트 문제
 		Scanner s = new Scanner(System.in);
 		int limit = s.nextInt();
 		int n = s.nextInt();
