@@ -31,9 +31,9 @@ public class challenge3 {
 					i--;
 					break;
 				} else {
-					i--;
 					answer++;
-
+					i--;
+					break;
 				}
 			}
 		}
