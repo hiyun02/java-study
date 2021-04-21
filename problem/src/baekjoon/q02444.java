@@ -7,25 +7,20 @@ public class q02444 {
 	public static void main(String[] args) {
 		Scanner scn = new Scanner(System.in);
 		int n = scn.nextInt();
-		for (int i = 1; i < 2 * n ; i++) {
-			if (i < n + 1) {
-				for (int j = 0; j < n - i; j++) {
+
+		int k = n;// 공백 출력 횟수
+		for (int i = 0; i < n * 2 - 1; i++) {
+			if (i < n)
+				k--;
+			else
+				k++;
+			for (int j = 0; j < k + (n-k) * 2 - 1; j++) {
+				if (j < k)
 					System.out.print(" ");
-				}
-				for (int j = 0; j < 2 * i - 1; j++) {
+				else
 					System.out.print("*");
-				}
-			
 			}
-			else {
-				for(int j=0;j<i-n;j++) {
-					System.out.print(" ");
-				}
-				for(int j=0;j<2*(2*n-i)-1;j++) {
-					System.out.print("*");
-				}
-			}
-		System.out.println();
+			System.out.println();
 		}
 	}
 
