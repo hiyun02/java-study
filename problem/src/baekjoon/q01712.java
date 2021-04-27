@@ -11,14 +11,10 @@ public class q01712 {
 		long B = s.nextLong();
 		long C = s.nextLong();
 
-		if (A + B >= C && B >= C) {
+		if (C<=B) {
 			System.out.println(-1);
 		} else {
-			long i = 0; //판매개수
-			while (B * i + A >= C * i) {
-				i++;
-			}
-			System.out.println(i);
+			System.out.println(A/(C-B)+1);
 		}
 	}
 
