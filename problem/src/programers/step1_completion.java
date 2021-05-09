@@ -1,29 +1,25 @@
 package programers;
 
+import java.util.Arrays;
+
 public class step1_completion {
 
 	public static void main(String[] args) {
-		String[] participant = {"mislav", "stanko", "mislav", "ana"};
-		String[] completion = {"stanko", "ana", "mislav"};
+		String[] participant = {"eden", "kiki" ,"leo"  };
+		String[] completion = {"eden", "kiki"};
 		System.out.println(solution(participant, completion));
 	}
 	public static String solution(String[] str1, String[] str2) {
-		String answer="";
-		return answer;
+		Arrays.sort(str1);
+		Arrays.sort(str2);
+		int i=0;
+		while(str2[i].equals(str1[i])) {
+			i++;
+			if(i==str2.length) {
+				return str1[str1.length-1];
+			}
+		}
+		return str1[i];
 	}
-//	ArrayList를 써서 풀어보려했지만 시간초과가 나옴......
-//	public static String solution(String[] str1, String[] str2) {
-//		ArrayList<String> part = new ArrayList<>(Arrays.asList(str1));
-//		for(String i : str2) {
-//			if(part.contains(i)) {
-//				part.remove(i);
-//			}
-//		}
-//		String answer="";
-//		for(String i : part) {
-//			if(i!=null) answer=i;
-//		}
-//		return answer;
-//	}
 	
 }
