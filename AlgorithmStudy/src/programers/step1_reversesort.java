@@ -20,7 +20,7 @@ public class step1_reversesort {
         rList.add((int)(n%10));
             n/=10;
         }
-        Collections.reverse(rList);
+        Collections.sort(rList, Collections.reverseOrder());
         
         for(int i=0; i<rList.size();i++){
             answer+=rList.get(i)*Math.pow(10.0,(double)rList.size()-1-i);
