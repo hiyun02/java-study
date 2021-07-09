@@ -14,72 +14,61 @@ public class step1_BestAndWorseOfLotto {
 	}
 
 	public static int[] solution(int[] lottos, int[] win_nums) {
-	        ArrayList<Integer> llist =  new ArrayList<>();
-	        ArrayList<Integer> wlist =  new ArrayList<>();
-	      
-	        int answer[] = new int[2];
-	        int rnk=7;
-	       
-	        for(int i: lottos) {
-	        	llist.add(i);
-	        }
-	        for(int i: win_nums) {
-	        	wlist.add(i);
-	        }
-	        
-	        
-	        Collections.sort(llist);
-	        Collections.sort(wlist);
+		ArrayList<Integer> llist = new ArrayList<>();
+		ArrayList<Integer> wlist = new ArrayList<>();
 
-	        //훼손된 번호(0)가 없을 때
-	        if(!llist.contains(0)) {
-	    	   
-	    	   for(int i=0;i<6;i++) {
-	    		   if(wlist.contains(llist.get(i))) {
-	    			   rnk--;
-	    		   }
-	    	   }
-	    	   if(rnk==7) rnk=6;
-	    	   answer[0]=answer[1]=rnk;
-	    	   
-	       }
-	       
-	       //훼손된 번호 0이 존재할 때
-	       else {
-	    	   int zero=0;
-	    	   int size = llist.size();
-	    	   for(int i=0; i<size;i++) {
-	    		   if(llist.get(i)==0) {
-	    			   llist.remove(i);
-	    			   i--; size--;
-	    			   zero++;
-	    		   } else {
-	    		     if(wlist.contains(llist.get(i))) {
-	    			   wlist.remove(i);
-	    			   i--; size--;
-	    			   rnk--;
-	    		      }
-	    		     }
-	    	   
-	    	   }
-	    	   
-	    	   
-	    	   answer[0]=rnk-zero;
-	    	   
-	    	   if(rnk==7) rnk=6;
-	    	   answer[1]=rnk;
-	    	   
-	       }
-	       
-	        
-	        return answer;
-	    }
-	public static int[] Solution(int[] lotto, int[]win_nums) {
-		
+		int rnk = 0;
+
+		for (int i : lottos) {
+			llist.add(i);
+		}
+		for (int i : win_nums) {
+			wlist.add(i);
+		}
+
+		Collections.sort(llist);
+		Collections.sort(wlist);
+
+		int zero = 0;
+		int size = llist.size();
+
+		for (int i = 0; i < size; i++) {
+			if (llist.get(i) == 0)
+				zero++;
+			else {
+				if (wlist.contains(llist.get(i)))
+					rnk++;
+			}
+
+		}
+
+		int[] answer = { Math.min(7 - (zero + rnk), 6), Math.min(7 - rnk, 6) };
+
+		return answer;
+
+	}
+
+	public int[] Solution(int[] lottos, int[] win_nums) {
+
 		HashMap<Integer, Boolean> map = new HashMap<>();
-		int zero=0;
-		int rank=0;
-		
-		return null;
+
+		int zero = 0;
+		int rank = 0;
+
+		for (int i : lottos) {
+			if (i == 0)
+				zero++;
+			else
+				map.put(i, true);
+		}
+
+		for (int i : win_nums) {
+			if (map.containsKey(i))
+				rank++;
+		}
+
+		int[] answer = { Math.min(7 - (zero + rank), 6), Math.min(7 - rank, 6) };
+
+		return answer;
 	}
 }
