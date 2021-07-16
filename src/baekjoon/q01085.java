@@ -23,6 +23,7 @@ public class q01085 {
 			arr[i]=Integer.parseInt(st.nextToken());
 		}
 		
+		
 		bw.write(Integer.toString(solution(arr)));
 		bw.close();
 		st=null;
