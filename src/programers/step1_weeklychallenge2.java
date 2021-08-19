@@ -10,6 +10,7 @@ public class step1_weeklychallenge2 {
 		for(int i=0;i<length;i++) {
 			int sum=0;
 			for(int j=0;j<length;j++) {
+		
 				
 			}
 		}
