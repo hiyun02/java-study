@@ -7,15 +7,23 @@ import java.util.StringTokenizer;
 
 public class q02869 {
 
+//	public static int solution(int A, int B, int V) {
+//		int distance = A;
+//		int day=1;
+//		while(distance<V) {
+//			distance-=B;
+//			day++;
+//			distance+=A;
+//		}
+//		return day;
+//	}
+	
 	public static int solution(int A, int B, int V) {
-		int distance = A;
-		int day=1;
-		while(distance<V) {
-			distance-=B;
-			day++;
-			distance+=A;
+		int distance = V-A;
+		if(distance%(A-B)!=0) {
+			return distance/(A-B)+1;
 		}
-		return day;
+		else return distance/(A-B);
 	}
 	
 	public static void main(String[] args) throws IOException {
