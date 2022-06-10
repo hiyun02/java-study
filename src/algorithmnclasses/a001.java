@@ -10,7 +10,6 @@ public class a001 {
 			i++;
 			j+=i;
 			k+=j;
-			
 		}
 		System.out.println("while문 탈출 후의 i : "+i+" j : "+j+" k : "+k);
 	}

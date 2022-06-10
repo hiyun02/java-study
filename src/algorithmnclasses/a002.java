@@ -10,7 +10,7 @@ public class a002 {
 		
 		if(a>b) {
 			 big=a;
-			 small=b;
+			  small=b;
 		} else {
 		     big=b;
 		     small=a;

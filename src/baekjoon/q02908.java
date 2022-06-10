@@ -1,10 +1,8 @@
 package baekjoon;
 
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
 import java.util.StringTokenizer;
 
 public class q02908 {
@@ -14,22 +12,22 @@ public class q02908 {
 
 		String str = br.readLine();
 		StringTokenizer st = new StringTokenizer(str);
-		
-		int a = Integer.parseInt(st.nextToken());
-		int b = Integer.parseInt(st.nextToken());
-
-		System.out.println(solution(a,b));
-	}
-	public static int solution(int x, int y) {
 
 		int[] arr = new int[2];
-		arr[0]=x;
-		arr[1]=y;
 		
-		for(int i : arr) {
-			x = i%10;
+		for(int i=0;i<2;i++)
+		arr[i] = Integer.parseInt(st.nextToken());
+
+		System.out.println(solution(arr));
+	}
+	public static int solution(int[] num) {
+
+		for(int i=0;i<2;i++) {
+			int n = num[i];
+			num[i] = (n/100)+(n%100/10)*10+(n%10)*100;
 		}
+			
 		
-		return 0;
+		return Math.max(num[0], num[1]);
 	}
 }
