@@ -1,26 +1,22 @@
 package baekjoon;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
+import java.io.*;
 
 public class q13458 {
 
 	public static long solution(int[] Class, int B, int C) {
 		long answer=0;
 		int n=Class.length;
-		//±³½Ç¼ö¸¸Å­¹Ýº¹¹®
+		//ï¿½ï¿½ï¿½Ç¼ï¿½ï¿½ï¿½Å­ï¿½Ýºï¿½ï¿½ï¿½
 		for(int i=0;i<n;i++) {
-			//¹«Á¶°Ç ÃÑ°¨µ¶°üÀº 1¸í¾¿¸¸ ÅõÀÔ
+			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 1ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 			int stu=Class[i]-B;
 			answer++;
 			
-			//°¨½ÃÇÒ ÇÐ»ýÀÌ ³²¾Æ ÀÖÀ¸¸é ºÎ°¨µ¶°ü ÅõÀÔ 
+			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ð»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Î°ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 
 			if(stu>0) {
 				if(stu%C==0) answer+=(stu/C);
-				//³²ÀºÇÐ»ý¼ö°¡ ºÎ°¨µ¶°üÀÇ °ü¸®°¡´ÉÀÎ¿øÀ¸·Î ³ª´©¾î¶³¾îÁöÁö ¾ÊÀ¸¸é 1¸í ´õ ÅõÀÔ
+				//ï¿½ï¿½ï¿½ï¿½ï¿½Ð»ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Î°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î¿ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½î¶³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 1ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 				else answer+=(stu/C)+1;
 			}
 		}

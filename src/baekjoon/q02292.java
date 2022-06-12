@@ -1,10 +1,6 @@
 package baekjoon;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
+import java.io.*;
 
 public class q02292 {
 	public static void main(String[] args) throws IOException{
@@ -17,20 +13,20 @@ public class q02292 {
 		br.close();
 	}
 	public static int solution(int N) {
-		//Áö³ª´Â ¹úÁýÀÇ °³¼ö. Ãâ¹ßÁöÁ¡1ºÎÅÍ ½ÃÀÛ
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½. ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½1ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		int answer=1;
 		
-		//nÀÌ 1ÀÌ¸é 1À» ¸®ÅÏ
+		//nï¿½ï¿½ 1ï¿½Ì¸ï¿½ 1ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		if(N==1) return answer;
 		
 		
-		//1À» ±âÁØÀ¸·Î n¹ø ÀÌµ¿ÇÏ¸é 6n°³ÀÇ À°°¢ÇüÀÌ µÑ·¯½Î°í ÀÖÀ½À» ÀÌ¿ëÇØ NÀÌ ¼ÓÇÑ ¹üÀ§¸¦ ÅëÇØ ÀÌµ¿È½¼ö¸¦ ±¸ÇÔ
+		//1ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ nï¿½ï¿½ ï¿½Ìµï¿½ï¿½Ï¸ï¿½ 6nï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ·ï¿½ï¿½Î°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¿ï¿½ï¿½ï¿½ Nï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½È½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		int range=1;
 		int up=1;
 		while(range<N) {
 			answer++;
 			range+=6*up;
-			//Áõ°¡'Æø'ÀÌ 6¾¿ Áõ°¡
+			//ï¿½ï¿½ï¿½ï¿½'ï¿½ï¿½'ï¿½ï¿½ 6ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 			up++;
 		}
 		

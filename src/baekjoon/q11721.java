@@ -1,10 +1,6 @@
 package baekjoon;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
+import java.io.*;
 
 public class q11721 {
 
@@ -12,24 +8,24 @@ public class q11721 {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-		// ÀÔ·Â¹ÞÀº ÁÙ ÀüÃ¼¸¦ ¹®ÀÚ¿­·Î ÀúÀå
+		// ï¿½Ô·Â¹ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		String str = br.readLine();
 		br.close();
-		// ÀÔ·Â¹ÞÀº ¹®ÀÚ¿­ÀÇ ±æÀÌ , ÇÑ¹ø¸¸ È£ÃâÇÏ¿© »ç¿ëÇÏ±â À§ÇØ °ªÀ» ÀúÀå
+		// ï¿½Ô·Â¹ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ , ï¿½Ñ¹ï¿½ï¿½ï¿½ È£ï¿½ï¿½ï¿½Ï¿ï¿½ ï¿½ï¿½ï¿½ï¿½Ï±ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		int len = str.length();
-		// ¹®ÀÚ¿­ÀÇ ±æÀÌ°¡ 10¹Ì¸¸ÀÌ¸é ¸ðµÎ Ãâ·Â ÈÄ mainÇÔ¼ö Á¾·á
+		// ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì°ï¿½ 10ï¿½Ì¸ï¿½ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ mainï¿½Ô¼ï¿½ ï¿½ï¿½ï¿½ï¿½
 		if (len < 10) {
 			bw.write(str);
 			bw.close();
 			return;
 		}
-		// substringÀ» ÀÌ¿ëÇØ 10±ÛÀÚ¾¿¸¸ Áß°£¿¡ ÁÙ¹Ù²ÞÇÏ¸ç Ãâ·Â. i´Â ¾îµð±îÁö Ãâ·ÂÇß´ÂÁö¸¦ ÀúÀåÇÏ´Â º¯¼ö·Î »ç¿ë
+		// substringï¿½ï¿½ ï¿½Ì¿ï¿½ï¿½ï¿½ 10ï¿½ï¿½ï¿½Ú¾ï¿½ï¿½ï¿½ ï¿½ß°ï¿½ï¿½ï¿½ ï¿½Ù¹Ù²ï¿½ï¿½Ï¸ï¿½ ï¿½ï¿½ï¿½. iï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ß´ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 		int i;
 		for (i = 0; i < len-(len%10); i += 10) {
 			bw.write(str.substring(i, i + 10));
 			bw.write("\n");
 		}
-		// ±æÀÌ°¡ 10ÀÇ ¹è¼ö°¡ ¾Æ´Ï¸é(Ãâ·ÂÇÒ ¹®ÀÚ¿­ÀÌ ³²¾ÆÀÖÀ¸¹Ç·Î) ³ª¸ÓÁö¸¦ Ãâ·Â
+		// ï¿½ï¿½ï¿½Ì°ï¿½ 10ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Æ´Ï¸ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½) ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 		if (len % 10 != 0)
 			bw.write(str.substring(i));
 
